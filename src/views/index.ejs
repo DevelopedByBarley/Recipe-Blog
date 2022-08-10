@@ -1,0 +1,81 @@
+<body>
+  <div id="index-container">
+    <div id="latestRecipe-title">
+      <h1>Legutóbbi receptek</h1>
+      <hr>
+    </div>
+
+    <div id="latestContainer">
+      <% for(let recipe of latestRecipes) {%>
+        <div class="latestRecipes">
+          <img src="images/<%= recipe.coverImageName %>" alt="">
+          <h2>
+            <%= recipe.title %>
+          </h2>
+
+          <div class="latestRecipes-description">
+            <p>
+              <span><i class="fa-regular fa fa-clock"></i></span>
+              <%=recipe.fullTime %>
+            </p>
+            <p>
+              <i class="fa-solid fa-dumbbell"></i>
+              <%=recipe.difficult %>
+            </p>
+            <p>
+              <i class="fa-solid fa-people-group"></i>
+              <%=recipe.portion %>
+            </p>
+            <p>
+              <i class="fa-solid fa-dollar-sign"></i>
+              <%=recipe.cost %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+    </div>
+
+    <div id="allRecipes-section">
+      <div id="allRecipes">
+        <h1>Összes Recept</h1>
+        <hr>
+        <div id="allRecipes-nav">
+          <a href="/recipes" id="allRecipes">Tovább </a>
+          <a href="/recipes/new" id="addRecipe">Adj hozzá</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="categories-section">
+      <div id="categorie-title">
+        <h1>Kategóriák</h1>
+        <hr>
+      </div>
+
+      <div id="categories">
+        <% for(let categorie of latestCategories) { %>
+          <div class="categorie">
+            <div class="categorie-wrapper">
+              <img src="/images/<%= categorie.coverImageName %> " class="categorie-image">
+              <p class="categorie-title">
+                <%= categorie.title %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+
+      </div>
+      <div id="categories-nav">
+        <a href="/categories/new">Hozzáad</a>
+        <a href="/categories">Összes</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="loader">
+    Betöltés...
+  </div>
+
+  <script src="/js/recipes/index.js"></script>
+</body>

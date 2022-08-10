@@ -1,0 +1,35 @@
+#allRecipes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: $titleFont;
+  font-size: 1.3rem;
+  padding: 4rem;
+  #allRecipes-nav {
+    display: flex;
+    a{
+      padding: .3rem 3rem;
+      color:  hsla(188, 100%, 6%, 0.58);
+      font-family: $textFont;
+      font-weight: bold;
+      border: 1px solid;
+      margin: 2rem .5rem;
+    }
+  
+    a:hover {
+      background: black;
+      color: white;
+      transition: all .3s ease-in-out;
+      transform: scale(1.1);
+    }
+    hr {
+      border: .5px solid hsla(188, 100%, 6%, 0.2);
+      width: 20%;
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+  }
+  
+
+}

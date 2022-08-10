@@ -1,0 +1,10 @@
+<div id="categories-container">
+  <% for(let categorie of categories) { %> 
+    <div class="categorie">
+      <h1 class="categorie-title">
+        <%= categorie.title %>
+      </h1>
+        <img src="/images/<%= categorie.coverImageName %> " class="categorie-image">
+    </div>
+  <% } %> 
+</div>

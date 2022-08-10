@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+  <form action="/recipes/new" method="POST" class="sendRecipesForm" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label for="title" class="label-title">
+        <span class="content-title">Recept neve:</span>
+      </label>
+      <input type="text" name="title" id="title" autocomplete="off" placeholder="Rántott padlizsán" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="categorie">Kategória:</label>
+      <select name="categorie">
+        <% categories.forEach(categorie=> { %>
+          <option  label="<%= categorie.title %>" value="<%= categorie.id %>"></option>
+        <% }) %>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="portion" class="label-portion">
+        <span class="content-portion">Adag/fő:</span>
+      </label>
+      <input type="number" name="portion" id="portion" autocomplete="off" max="6" placeholder="max: 6" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cost">Nehézség:</label>
+      <select name="cost" id="cost">
+        <option value="Olcsó">Olcsó</option>
+        <option value="Megfizethető">Megfizethető</option>
+        <option value="Drága">Drága</option>
+        <option value="Nagyon Drága">Nagyon Drága</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="difficult">Nehézség:</label>
+      <select name="difficult" id="difficult">
+        <option value="Könnyü">Könnyü</option>
+        <option value="Közepes">Közepes</option>
+        <option value="Nehéz">Nehéz</option>
+        <option value="Nagyon nehéz">Nagyon nehéz</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="preparationTime">Előkészitési idő:</label>
+      <input type="number" name="preparationTime" id="preparationTime" placeholder="perc" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cookDuration">Főzési idő:</label>
+      <input type="number" name="cookDuration" id="cookDuration" placeholder="perc" required>
+    </div>
+
+    <div class="form-group">
+      <label for="steps">Hozzávalók</label>
+      <div id="ingredients-container">
+        <input type="text" name="ingredients" id="ingredients" required>
+      </div>
+      <div class="button-container">
+        <button id="addIngredients" class="add-button">Hozzáad</button>
+        <button id="removeIngredients" class="remove-button">Töröl</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="steps">Lépések</label>
+      <div id="steps-container">
+        <input type="text" name="steps" id="steps" required>
+      </div>
+      <div class="button-container">
+        <button id="addSteps" class="add-button">Hozzáad</button>
+        <button id="removeSteps" class="remove-button">Töröl</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cover">Fájl feltöltése</label>
+      <input type="file" name="cover" id="cover" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Komment:</label>
+      <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Adj hozzá kommentet..."></textarea>
+    </div>
+
+    <button type="submit" id="send-recipe">Elküld</button>
+  </form>
+
+  <script src="/js/recipes/new.js"></script>
+</body>
+
+</html>

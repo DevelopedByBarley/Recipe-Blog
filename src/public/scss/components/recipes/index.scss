@@ -1,0 +1,124 @@
+
+#recipes-container {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-gap: 4rem;
+
+  .recipe-box {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+    h1 {
+      font-family: $titleFont;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    hr {
+      width: 50%;
+      margin: 0.5rem auto;
+    }
+
+    p {
+      padding: 0 1rem;
+      font-family: $textFont;
+      text-align: center;
+      display: inline-block;
+      padding-bottom: 1rem;
+    }
+
+    .recipe-box-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .recipe-box-btn {
+        color: black;
+        margin: 1rem .2rem;
+        padding: .5rem;
+        border: 0;
+        background: white;
+        cursor: pointer;
+      }
+      .recipe-box-btn:hover {
+        background: black;
+        color: white;
+        transition: all .4s ease-in-out;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #recipes-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+
+    .recipe-image-container {
+      img {
+        height: 100%;
+      }
+    }
+
+    .recipe-box {
+      display: grid;
+      grid-gap: 0;
+      grid-template-columns: repeat(2, 1fr);
+
+      .recipe-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
+
+@media (min-width: 1300px) {
+  #recipes-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#index-container {
+  opacity: 0;
+}
+
+#index-container.active {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+
+#loader {
+  height: 100vh;
+  width: 100%;
+  background: $nightBackground;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: $titleFont;
+}
+
+#loader.deactive {
+  top: -100%;
+  transition: all .4s ease-in-out;
+}

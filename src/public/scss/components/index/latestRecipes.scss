@@ -1,0 +1,64 @@
+#latestRecipe-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 70px;
+  font-family: $titleFont;
+  font-size: 1.3rem;
+  margin-top: 5rem;
+  position: relative;
+}
+
+hr {
+  border: 0.5px solid hsla(188, 100%, 6%, 0.2);
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+#latestContainer {
+  width: 100%;
+  display: grid;
+  padding: 2rem;
+  grid-gap: 1rem;
+  margin-top: 2rem;
+  .latestRecipes {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align: center;
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      font-family: $titleFont;
+    }
+
+    .latestRecipes-description {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-family: $textFont;
+      padding: .5rem;
+    }
+    
+  }
+
+  
+  .latestRecipes:hover {
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.03);
+  }
+}
+
+@media (min-width: 768px) {
+  #latestContainer {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+
+  #addRecipe {
+    position: relative;
+  }
+}

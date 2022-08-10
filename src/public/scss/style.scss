@@ -1,0 +1,26 @@
+@import './components/settings/variables';
+@import './components/settings/reset';
+@import './components/settings/tipography';
+
+@import './components/error/oops';
+@import './components/error/errorMessage';
+
+
+@import './components/partials/admin';
+@import './components/partials/header';
+@import './components/partials/navigation';
+
+@import './components/index/latestRecipes';
+@import './components/index/categories';
+@import './components/index/allRecipes';
+
+@import './components/recipes/form';
+@import './components/recipes/update';
+@import './components/recipes/index';
+@import './components/recipes/recipe';
+
+@import './components/categories/categories';
+@import './components/categories/new';
+
+
+

@@ -1,0 +1,134 @@
+</div>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+</head>
+
+<body>
+  <form class="sendRecipesForm">
+    <img src="/images/<%= recipe.coverImageName  %> " style="width: 200px" />
+    <div class="form-group">
+      <label for="title" class="label-title">
+        <span class="content-title">Recept neve:</span>
+      </label>
+      <input type="text" name="title" id="recipe-title" autocomplete="off" value="<%= recipe.title %> " required>
+    </div>
+
+    <div class="form-group">
+      <label for="categorie">Kategória:</label>
+      <select name="categorie" id="categorie">
+        <% categories.forEach(categorie=> { %>
+          <% if(categorie.id === recipe.categorie.toString()) { %>
+            <option selected label="<%= categorie.title %>" value="<%= categorie.id %>"></option>
+          <% } else { %>
+            <option  label="<%= categorie.title %>" value="<%= categorie.id %>"></option>
+          <% } %>   
+        <% }) %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="portion" class="label-portion">
+        <span class="content-portion">Adag/fő:</span>
+      </label>
+      <input type="number" name="portion" id="portion" autocomplete="off" max="6" value=<%= recipe.portion %> required>
+    </div>
+
+    <div class="form-group">
+      <label for="cost">Nehézség:</label>
+      <select name="cost" id="cost">
+        <option value="Olcsó">Olcsó</option>
+        <option value="Megfizethető">Megfizethető</option>
+        <option value="Drága">Drága</option>
+        <option value="Nagyon Drága">Nagyon Drága</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="difficult">Nehézség:</label>
+      <select name="difficult" id="difficult">
+        <option value="Könnyü">Könnyü</option>
+        <option value="Közepes">Közepes</option>
+        <option value="Nehéz">Nehéz</option>
+        <option value="Nagyon nehéz">Nagyon nehéz</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="preparationTime">Előkészitési idő:</label>
+      <input type="number" name="preparationTime" id="preparationTime" value="<%= recipe.preparationTime %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cookDuration">Főzési idő:</label>
+      <input type="number" name="cookDuration" id="cookDuration" value="<%= recipe.cookDuration %>" required>
+    </div>
+
+    <div id="ingredients-wrapper">
+      <label for="ingredients">Hozzávalók</label>
+      <div class="form-group" id="ingredients-container">
+        <% for(var ingredient of recipe.ingredients) { %>
+          <div class="ingredients-box">
+            <input type="text" name="ingredients" id="ingredient" value="<%= ingredient %> " required>
+            <button class="removeIngredients remove-button"><i class="fa-solid fa-lg fa-trash"></i></button>
+          </div>
+          <% } %>
+      </div>
+      <div class="button-container">
+        <button id="addIngredients" class="add-button">Hozzáad</button>
+      </div>
+    </div>
+
+    <div id="steps-wrapper">
+      <label for="steps">Lépések:</label>
+      <div class="form-group" id="steps-container">
+        <% for(var step of recipe.steps) { %>
+          <div class="steps-box">
+            <input type="text" name="steps" id="steps" value="<%= step %> " required>
+            <button class="removeSteps remove-button"><i class="fa-solid fa-lg fa-trash"></i></button>
+          </div>
+          <% } %>
+      </div>
+      <div class="button-container">
+        <button id="addSteps" class="add-button">Hozzáad</button>
+      </div>
+    </div>
+    
+      <div class="form-group">
+        <label for="comment">Komment:</label> 
+        <textarea name="comment" id="comment" cols="30" rows="10"><%= recipe.comment %></textarea>
+      </div>
+      
+      <button id="update-recipe" data-id="<%= recipe._id %> ">Frissit</button>
+  </form>
+    
+    
+      <script src="/js/recipes/update.js"></script>
+    </body>
+    
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

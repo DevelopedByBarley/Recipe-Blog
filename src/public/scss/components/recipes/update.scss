@@ -1,0 +1,55 @@
+.sendRecipesForm {
+  #ingredients-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #basic-ingredient-box {
+      display: none;
+    }
+    .ingredients-box {
+      display: flex;
+      .removeIngredients {
+        border: 0;
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+  #steps-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .steps-box {
+      display: flex;
+
+      .removeSteps {
+        border: 0;
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  button {
+    position: relative;
+    top: -0.3rem;
+    margin: 1rem auto;
+    padding: 0.3rem;
+    cursor: pointer;
+    font-family: $textFont;
+    font-weight: bolder;
+    font-size: 0.9rem;
+  }
+
+  .add-button {
+    min-width: 170px;
+    width: 30%;
+    background-color: $nightBackground;
+    color: white;
+  }
+}

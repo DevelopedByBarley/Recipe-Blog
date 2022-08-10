@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="recipe-wrapper">
+        <div id="recipe-container">
+            <h1 id="recipe-title">
+                <%= recipe.title %>
+            </h1>
+            <img src="/images/<%= recipe.coverImageName %> " alt="">
+            <div class="recipe-description">
+                <div id="recipe-categorie">
+                    <h1>
+                        Kategória:
+                    </h1>
+                    <p>
+                        <%= recipe.categorie.title %>
+                    </p>
+                </div>
+                <div id="portion">
+                    <h1>Adag/Fő</h1>
+                    <p>
+                        <%= recipe.portion %>
+                    </p>
+                </div>
+                <div id="cost">
+                    <h1>Költség</h1>
+                    <p>
+                        <%= recipe.cost %>
+                    </p>
+                </div>
+                <div id="difficult">
+                    <h1>Nehézség</h1>
+                    <p>
+                        <%= recipe.difficult%>
+                    </p>
+                </div>
+                <div id="preparation-time">
+                    <h1>Előkészülési idő:</h1>
+                    <p>
+                        <%= recipe.preparationTime %> perc
+                    </p>
+                </div>
+                <div id="cookDuration">
+                    <h1>Főzési idő:</h1>
+                    <p>
+                        <%= recipe.cookDuration %> perc
+                    </p>
+                </div>
+    
+                <div id="ingredients">
+                    <h1>Hozzávalók</h1>
+                    <% for(let ingredient of recipe.ingredients) {%>
+                        <% if(ingredient !=='' ) {%>
+                            <div class="ingredient-box">
+                                <input type="checkbox" name="ingredient" id="">
+                                <label for="ingredeint">
+                                    <%= ingredient %>
+                                </label>
+                            </div>
+    
+    
+                            <% } %>
+                                <%}%>
+                </div>
+    
+                <div id="steps">
+                    <h1>Lépések:</h1>
+                    <% for(let step of recipe.steps) {%>
+                        <% if(step !=='' ) {%>
+                            <p>
+                                - <%= step %>
+                            </p>
+                            <hr>
+                            <% } %>
+                                <%}%>
+                </div>
+    
+                <div id="comment">
+                    <h1>Komment:</h1>
+                    <p>
+                        <%= recipe.comment %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="editRecipe">
+            <a href="/recipes/recipe/update/<%=recipe._id%>" class="recipe-box-btn"
+                data-id="<%= recipe._id %>">Szerkeszt</a>
+        </div>
+    
+    </div>
+
+    <script src="/js/recipes/recipe.js"></script>
+</body>
+</html>

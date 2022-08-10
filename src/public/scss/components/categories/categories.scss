@@ -1,0 +1,39 @@
+#categories-container {
+  display: grid;
+  width: 100%;
+
+
+  .categorie {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem 0;
+
+    .categorie-title {
+      margin: 2rem 0;
+      font-family: $titleFont;
+    }
+
+    img {
+      width: 80%;
+      margin: 0 auto;
+      border-radius: 20px;
+      max-height: 500px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  #categories-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  #categories-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

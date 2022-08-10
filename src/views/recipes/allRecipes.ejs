@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <div id="recipes-container">
+      <% recipes.forEach(function(recipe) { %>
+        <div class="recipe-box">
+          <div class="recipe-image-container">
+            <img src="/images/<%= recipe.coverImageName %> " alt="">
+          </div>
+          <div class="recipe-info">
+            <h1>
+              <%= recipe.title %>
+            </h1>
+            <hr>
+            <div class="recipe-description">
+              <p>
+                <span><i class="fa-regular fa fa-clock"></i></span>
+                <%=recipe.fullTime %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dumbbell"></i>
+                <%=recipe.difficult %>
+              </p>
+              <p>
+                <i class="fa-solid fa-people-group"></i>
+                <%=recipe.portion %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <%=recipe.cost %>
+              </p>
+            </div>
+            <div class="recipe-box-nav">
+              <a href="/recipes/recipe/<%=recipe._id%>" class="recipe-box-btn" data-id="<%= recipe._id %>"><i class="fa-regular fa-2x fa-eye"></i></a>
+              <a href="/recipes/recipe/update/<%=recipe._id%>" class="recipe-box-btn" data-id="<%= recipe._id %>"><i class="fa-regular fa-2x fa-pen-to-square"></i></a>
+              <button class="recipe-box-btn deleteRecipeBtn" data-id="<%= recipe._id %>"><i class="fa-regular fa-2x fa-trash-can"></i></button>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+    </div> 
+    
+    <script src="/js/recipes/allRecipes.js"></script>
+  </body>
+</html>
