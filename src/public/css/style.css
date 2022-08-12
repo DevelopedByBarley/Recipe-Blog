@@ -148,7 +148,7 @@ nav {
     font-family: "Arima", cursive;
     font-weight: bold; }
 
-#latestRecipe-title {
+.latestRecipe-title {
   width: 100%;
   display: flex;
   align-items: center;
@@ -166,31 +166,31 @@ hr {
   margin: 0 auto;
   margin-top: 1rem; }
 
-#latestContainer {
+.latestContainer {
   width: 80%;
   margin: 2rem auto;
   display: grid;
   padding: 2rem;
   grid-gap: 1rem; }
-  #latestContainer .latestRecipes {
+  .latestContainer .latestRecipes {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     text-align: center; }
-    #latestContainer .latestRecipes img {
+    .latestContainer .latestRecipes img {
       width: 100%; }
-    #latestContainer .latestRecipes h2 {
+    .latestContainer .latestRecipes h2 {
       font-family: "Caveat", cursive; }
-    #latestContainer .latestRecipes .latestRecipes-description {
+    .latestContainer .latestRecipes .latestRecipes-description {
       display: grid;
       grid-template-columns: 1fr 1fr;
       font-family: "Arima", cursive;
       padding: .5rem; }
-  #latestContainer .latestRecipes:hover {
+  .latestContainer .latestRecipes:hover {
     transition: all 0.4s ease-in-out;
     transform: scale(1.03); }
 
 @media (min-width: 768px) {
-  #latestContainer {
+  .latestContainer {
     grid-template-columns: repeat(5, 1fr); }
 
   #addRecipe {

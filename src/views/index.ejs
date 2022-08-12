@@ -1,11 +1,18 @@
 <body>
   <div id="index-container">
-    <div id="latestRecipe-title">
+
+
+
+
+
+
+
+    <div class="latestRecipe-title">
       <h1>Legutóbbi receptek</h1>
       <hr>
     </div>
 
-    <div id="latestContainer">
+    <div class="latestContainer">
       <% for(let recipe of latestRecipes) {%>
         <div class="latestRecipes">
           <img src="images/<%= recipe.coverImageName %>" alt="">
@@ -35,6 +42,17 @@
         <% } %>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
     <div id="allRecipes-section">
       <div id="allRecipes">
         <h1>Összes Recept</h1>
@@ -45,6 +63,16 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
 
 
     <div id="categories-section">
@@ -71,8 +99,188 @@
         <a href="/categories">Összes</a>
       </div>
     </div>
-  </div>
 
+
+
+
+
+
+
+
+    <div id="hungarian-latests">
+      <div class="latestRecipe-title">
+        <h1>Magyar receptek</h1>
+        <hr>
+      </div>
+  
+      <div class="latestContainer">
+        <% for(let recipe of hungarianLatest) {%>
+          <div class="latestRecipes">
+            <img src="images/<%= recipe.coverImageName %>" alt="">
+            <h2>
+              <%= recipe.title %>
+            </h2>
+  
+            <div class="latestRecipes-description">
+              <p>
+                <span><i class="fa-regular fa fa-clock"></i></span>
+                <%=recipe.fullTime %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dumbbell"></i>
+                <%=recipe.difficult %>
+              </p>
+              <p>
+                <i class="fa-solid fa-people-group"></i>
+                <%=recipe.portion %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <%=recipe.cost %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="italian-latests">
+      <div class="latestRecipe-title">
+        <h1>Olasz receptek</h1>
+        <hr>
+      </div>
+  
+      <div class="latestContainer">
+        <% for(let recipe of italianLatest) {%>
+          <div class="latestRecipes">
+            <img src="images/<%= recipe.coverImageName %>" alt="">
+            <h2>
+              <%= recipe.title %>
+            </h2>
+  
+            <div class="latestRecipes-description">
+              <p>
+                <span><i class="fa-regular fa fa-clock"></i></span>
+                <%=recipe.fullTime %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dumbbell"></i>
+                <%=recipe.difficult %>
+              </p>
+              <p>
+                <i class="fa-solid fa-people-group"></i>
+                <%=recipe.portion %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <%=recipe.cost %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="american-latests">
+      <div class="latestRecipe-title">
+        <h1>Amerikai receptek</h1>
+        <hr>
+      </div>
+  
+      <div class="latestContainer">
+        <% for(let recipe of americanLatest) {%>
+          <div class="latestRecipes">
+            <img src="images/<%= recipe.coverImageName %>" alt="">
+            <h2>
+              <%= recipe.title %>
+            </h2>
+  
+            <div class="latestRecipes-description">
+              <p>
+                <span><i class="fa-regular fa fa-clock"></i></span>
+                <%=recipe.fullTime %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dumbbell"></i>
+                <%=recipe.difficult %>
+              </p>
+              <p>
+                <i class="fa-solid fa-people-group"></i>
+                <%=recipe.portion %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <%=recipe.cost %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+
+    <div id="chinese-latests">
+      <div class="latestRecipe-title">
+        <h1>Kinai receptek</h1>
+        <hr>
+      </div>
+  
+      <div class="latestContainer">
+        <% for(let recipe of chineseLatest) {%>
+          <div class="latestRecipes">
+            <img src="images/<%= recipe.coverImageName %>" alt="">
+            <h2>
+              <%= recipe.title %>
+            </h2>
+  
+            <div class="latestRecipes-description">
+              <p>
+                <span><i class="fa-regular fa fa-clock"></i></span>
+                <%=recipe.fullTime %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dumbbell"></i>
+                <%=recipe.difficult %>
+              </p>
+              <p>
+                <i class="fa-solid fa-people-group"></i>
+                <%=recipe.portion %>
+              </p>
+              <p>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <%=recipe.cost %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+   
   <div id="loader">
     Betöltés...
   </div>

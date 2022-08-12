@@ -1,4 +1,4 @@
-#latestRecipe-title {
+.latestRecipe-title {
   width: 100%;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ hr {
   margin-top: 1rem;
 }
 
-#latestContainer {
+.latestContainer {
   width: 80%;
   margin: 2rem auto;
   display: grid;
@@ -53,7 +53,7 @@ hr {
 }
 
 @media (min-width: 768px) {
-  #latestContainer {
+  .latestContainer {
     grid-template-columns: repeat(5, 1fr);
   }
 
@@ -62,3 +62,4 @@ hr {
     position: relative;
   }
 }
+
