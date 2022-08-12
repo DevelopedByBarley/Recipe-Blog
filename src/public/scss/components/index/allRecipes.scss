@@ -9,12 +9,14 @@
   #allRecipes-nav {
     display: flex;
     a{
-      padding: .3rem 3rem;
+      padding: .5rem 2rem;
       color:  hsla(188, 100%, 6%, 0.58);
       font-family: $textFont;
       font-weight: bold;
       border: 1px solid;
       margin: 2rem .5rem;
+      font-size: 1.1rem;
+      
     }
   
     a:hover {
@@ -32,4 +34,53 @@
   }
   
 
+}
+
+#confirm {
+  position: fixed;
+  right: 50%;
+  bottom: -100%;
+  transform: translate(50%);
+  background: white;
+  z-index: 99;
+  background: $nightBackground;
+  color: white;
+  width: 400px;
+  padding: 3rem;
+  transition: all .5s ease-in-out;
+  font-family: $titleFont;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  #confirm-buttons {
+    
+    button {
+      padding: .5rem 1rem;
+      margin: 1rem .5rem;
+      font-family: $textFont;
+      font-weight: bolder;
+      transition: all .4s ease-in-out;;
+    }
+
+    #accept:hover {
+      background-color: red;
+      color: white;
+    }
+
+    #reject:hover {
+      background-color: #72cae5;
+      color: white;
+    }
+
+  }
+}
+
+
+
+#confirm.active {
+  bottom: 0;
 }

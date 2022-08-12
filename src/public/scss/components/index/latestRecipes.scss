@@ -19,11 +19,11 @@ hr {
 }
 
 #latestContainer {
-  width: 100%;
+  width: 80%;
+  margin: 2rem auto;
   display: grid;
   padding: 2rem;
   grid-gap: 1rem;
-  margin-top: 2rem;
   .latestRecipes {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
