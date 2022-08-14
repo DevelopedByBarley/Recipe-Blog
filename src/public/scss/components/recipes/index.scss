@@ -20,12 +20,12 @@
       font-family: $titleFont;
       text-align: center;
       font-size: 1.5rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
 
     hr {
       width: 50%;
-      margin: 0.5rem auto;
+      margin: 1rem auto;
     }
 
     p {
@@ -35,6 +35,21 @@
       display: inline-block;
       padding-bottom: 1rem;
     }
+
+
+
+    .recipe-info {
+      .recipe-description {
+         p {
+          span {
+            color: #be2a77;
+          }
+         }
+      }
+    }
+
+
+
 
     .recipe-box-nav {
       display: flex;

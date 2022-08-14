@@ -100,7 +100,8 @@
   color: white;
   position: fixed;
   top: 0;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
   #socialNav #admin {
     position: absolute;
     right: 0;
@@ -128,7 +129,7 @@ header {
     font-family: "Caveat", cursive;
     font-size: 5rem;
     font-weight: 100;
-    margin-top: 4rem; }
+    margin-top: 1rem; }
   header p {
     font-size: 1.2rem;
     margin-left: 3rem;
@@ -139,7 +140,6 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 3rem;
   text-align: center;
   width: 100%; }
   nav a {
@@ -148,6 +148,43 @@ nav {
     font-family: "Arima", cursive;
     font-weight: bold; }
 
+.random-recipe-header h1 {
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 4rem; }
+
+.random-recipe {
+  margin: 5rem 0; }
+  .random-recipe h1 {
+    font-family: "Caveat", cursive; }
+  .random-recipe p {
+    font-family: "Arima", cursive;
+    margin: 1rem; }
+  .random-recipe img {
+    width: 100%; }
+  .random-recipe .random-recipe-description-container {
+    margin: 1rem; }
+    .random-recipe .random-recipe-description-container a {
+      background-color: #be2a77;
+      padding: 1rem;
+      color: white;
+      margin: 2rem;
+      display: inline-block; }
+
+@media (min-width: 768px) {
+  .random-recipe {
+    width: 70%;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    .random-recipe img {
+      width: 50%;
+      margin: 0 auto; }
+    .random-recipe .random-recipe-description-container {
+      position: relative;
+      right: 20%;
+      background: white; } }
 .latestRecipe-title {
   width: 100%;
   display: flex;
@@ -167,7 +204,7 @@ hr {
   margin-top: 1rem; }
 
 .latestContainer {
-  width: 80%;
+  width: 85%;
   margin: 2rem auto;
   display: grid;
   padding: 2rem;
@@ -179,12 +216,16 @@ hr {
     .latestContainer .latestRecipes img {
       width: 100%; }
     .latestContainer .latestRecipes h2 {
-      font-family: "Caveat", cursive; }
+      font-family: "Caveat", cursive;
+      margin: 1rem; }
     .latestContainer .latestRecipes .latestRecipes-description {
       display: grid;
       grid-template-columns: 1fr 1fr;
       font-family: "Arima", cursive;
       padding: .5rem; }
+      .latestContainer .latestRecipes .latestRecipes-description span {
+        color: #be2a77;
+        margin: .5rem; }
   .latestContainer .latestRecipes:hover {
     transition: all 0.4s ease-in-out;
     transform: scale(1.03); }
@@ -334,7 +375,7 @@ hr {
   font-family: "Caveat", cursive; }
 
 #loader.deactive {
-  top: -100%;
+  top: -200%;
   transition: all .4s ease-in-out; }
 
 .sendRecipesForm {
@@ -449,16 +490,18 @@ hr {
       font-family: "Caveat", cursive;
       text-align: center;
       font-size: 1.5rem;
-      margin-top: 0.5rem; }
+      margin-top: 1rem; }
     #recipes-container .recipe-box hr {
       width: 50%;
-      margin: 0.5rem auto; }
+      margin: 1rem auto; }
     #recipes-container .recipe-box p {
       padding: 0 1rem;
       font-family: "Arima", cursive;
       text-align: center;
       display: inline-block;
       padding-bottom: 1rem; }
+    #recipes-container .recipe-box .recipe-info .recipe-description p span {
+      color: #be2a77; }
     #recipes-container .recipe-box .recipe-box-nav {
       display: flex;
       flex-direction: row;
@@ -505,28 +548,38 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-top: 3rem; }
   .recipe-wrapper #recipe-container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    margin: 2rem;
-    padding: 2rem;
     max-width: 1000px; }
+    .recipe-wrapper #recipe-container #recipe-title {
+      font-size: 3rem; }
     .recipe-wrapper #recipe-container h1 {
       font-family: "Caveat", cursive;
       margin-top: 1rem;
       margin-bottom: 1rem; }
     .recipe-wrapper #recipe-container p,
     .recipe-wrapper #recipe-container label {
-      font-family: "Arima", cursive; }
+      font-family: "Arima", cursive;
+      margin: 1rem; }
     .recipe-wrapper #recipe-container img {
-      width: 90%;
+      width: 100%;
       margin: 0 auto; }
     .recipe-wrapper #recipe-container .recipe-description input[type="checkbox"]:checked + label {
       text-decoration: line-through; }
+    .recipe-wrapper #recipe-container .recipe-description #steps .step {
+      background-color: rgba(69, 69, 69, 0.85);
+      padding: 1rem;
+      border-radius: 20px;
+      color: white; }
+      .recipe-wrapper #recipe-container .recipe-description #steps .step .step-index {
+        font-size: 1.2rem;
+        font-weight: bolder; }
 
 #editRecipe {
   width: 100%;

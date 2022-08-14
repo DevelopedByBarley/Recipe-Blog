@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 </head>
+
 <body>
     <div class="recipe-wrapper">
         <div id="recipe-container">
@@ -52,7 +54,7 @@
                         <%= recipe.cookDuration %> perc
                     </p>
                 </div>
-    
+
                 <div id="ingredients">
                     <h1>Hozzávalók</h1>
                     <% for(let ingredient of recipe.ingredients) {%>
@@ -63,24 +65,27 @@
                                     <%= ingredient %>
                                 </label>
                             </div>
-    
-    
+
+
                             <% } %>
                                 <%}%>
                 </div>
-    
+
                 <div id="steps">
                     <h1>Lépések:</h1>
-                    <% for(let step of recipe.steps) {%>
+                    <% for(let [index,step] of recipe.steps.entries()) {%>
                         <% if(step !=='' ) {%>
-                            <p>
-                                - <%= step %>
+                            <p class="step">
+                                <span class="step-index"><%=index + 1%></span>.
+                                <i class="fa-solid fa fa-shoe-prints"></i>
+                                <br>
+                                <%= step %>
                             </p>
-                            <hr>
+
                             <% } %>
                                 <%}%>
                 </div>
-    
+
                 <div id="comment">
                     <h1>Komment:</h1>
                     <p>
@@ -93,9 +98,10 @@
             <a href="/recipes/recipe/update/<%=recipe._id%>" class="recipe-box-btn"
                 data-id="<%= recipe._id %>">Szerkeszt</a>
         </div>
-    
+
     </div>
 
     <script src="/js/recipes/recipe.js"></script>
 </body>
+
 </html>

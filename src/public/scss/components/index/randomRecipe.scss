@@ -1,0 +1,54 @@
+.random-recipe-header {
+  h1 {
+    font-family: $titleFont;
+    font-size: 3rem;
+    text-align: center;
+    margin: 4rem;
+  }
+}
+
+.random-recipe {
+  margin: 5rem 0;
+  h1 {
+    font-family: $titleFont;
+  }
+  p {
+    font-family: $textFont;
+    margin: 1rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .random-recipe-description-container {
+    margin: 1rem;
+
+    a {
+      background-color: #be2a77;
+      padding: 1rem;
+      color: white;
+      margin: 2rem;
+      display: inline-block;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .random-recipe {
+    width: 70%;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    img {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .random-recipe-description-container {
+      position: relative;
+      right: 20%;
+      background: white;
+    }
+  }
+} 

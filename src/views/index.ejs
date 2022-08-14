@@ -3,8 +3,7 @@
 
 
 
-
-
+    
 
 
     <div class="latestRecipe-title">
@@ -16,25 +15,25 @@
       <% for(let recipe of latestRecipes) {%>
         <div class="latestRecipes">
           <img src="images/<%= recipe.coverImageName %>" alt="">
+          
           <h2>
             <%= recipe.title %>
           </h2>
-
           <div class="latestRecipes-description">
             <p>
-              <span><i class="fa-regular fa fa-clock"></i></span>
+              <span><i class="fa-regular fa-lg fa-clock"></i></span>
               <%=recipe.fullTime %>
             </p>
             <p>
-              <i class="fa-solid fa-dumbbell"></i>
+              <span><i class="fa-solid fa-lg fa-dumbbell"></i></span>
               <%=recipe.difficult %>
             </p>
             <p>
-              <i class="fa-solid fa-people-group"></i>
+              <span><i class="fa-solid fa-lg fa-people-group"></i></span>
               <%=recipe.portion %>
             </p>
             <p>
-              <i class="fa-solid fa-dollar-sign"></i>
+              <span><i class="fa-solid fa-lg fa-dollar-sign"></i></span>
               <%=recipe.cost %>
             </p>
           </div>
@@ -43,7 +42,27 @@
     </div>
 
 
+    <div class="random-recipe-header">
+      <h1>Meglepetés recept</h1>
+    </div>
+    <div class="random-recipe">
+      <img src="images/<%= randomRecipe[0].coverImageName %> " alt="">
+      <div class="random-recipe-description-container">
+        <h1><%= randomRecipe[0].title %></h1>
+        <p>
+          <span><i class="fa-solid fa-people-group"></i></span>
+          <%= randomRecipe[0].portion %></p>
+        <p> 
+          <span><i class="fa-regular fa fa-clock"></i></span> 
+          <%= randomRecipe[0].fullTime %>min</p>
+        <p>
+          <span><i class="fa-solid fa fa-comment"></i></span>
+          <%= randomRecipe[0].comment %>
+        </p>
+        <a href="#" id="check-random">Megtekint</a>
 
+      </div>
+    </div>
 
 
 

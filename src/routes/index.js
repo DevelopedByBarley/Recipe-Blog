@@ -12,7 +12,19 @@ router.get('/', async (req, res) => {
   let chineseLatest = await RecipeModel.find({ categorie: '62f259dddef23d8a732190e1' }).sort({ _id: -1 }).limit(5);
   let hungarianLatest = await RecipeModel.find({ categorie: '62f259a6849a591f6a0e146d' }).sort({ _id: -1 }).limit(5);
   let italianLatest = await RecipeModel.find({ categorie: '62f259f5def23d8a732190ef' }).sort({ _id: -1 }).limit(5);
-  console.log(chineseLatest)
+  await RecipeModel.count().exec(function (err, count) {
+    
+    var random = Math.floor(Math.random() * count)
+  
+    RecipeModel.findOne().skip(random).exec(
+      function (err, result) {})
+    })
+    
+    let randomRecipe = await RecipeModel.aggregate().sample(1) 
+
+
+
+
 
   res.render('index',
     {
@@ -21,7 +33,8 @@ router.get('/', async (req, res) => {
       americanLatest: americanLatest,
       chineseLatest: chineseLatest,
       hungarianLatest: hungarianLatest,
-      italianLatest: italianLatest
+      italianLatest: italianLatest,
+      randomRecipe: randomRecipe
     }
   )
 })

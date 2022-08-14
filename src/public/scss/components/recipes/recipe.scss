@@ -3,15 +3,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 3rem;
     #recipe-container {
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         flex-direction: column;
-        margin: 2rem;
-        padding: 2rem;
         max-width: 1000px;
+        #recipe-title {
+            font-size: 3rem;
+        }
         h1 {
             font-family: $titleFont;
             margin-top: 1rem;
@@ -20,15 +22,29 @@
         p,
         label {
             font-family: $textFont;
+            margin: 1rem;
         }
         img {
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
         }
 
         .recipe-description {
             input[type="checkbox"]:checked + label {
                 text-decoration: line-through;
+            }
+
+            #steps {
+                .step {
+                    background-color: hsla(360, 0%, 27%, 0.85);
+                    padding: 1rem;
+                    border-radius: 20px;
+                    color: white;
+                    .step-index {
+                        font-size: 1.2rem;
+                        font-weight: bolder;
+                    }
+                }
             }
         }
     }
