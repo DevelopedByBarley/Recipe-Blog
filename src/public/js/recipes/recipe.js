@@ -12,18 +12,19 @@ window.addEventListener('scroll', (event) => {
   } else {
     ingredientsMenu.classList.remove('active')
     ingredients.classList.remove('fixed')
+    ingredientsHide.classList.remove('active');
   }
 })
 
 ingredientsMenu.addEventListener('click', () => {
   ingredients.classList.add('active');
-  ingredientsMenu.style.display = 'none';
-  ingredientsHide.style.display = 'block';
+  ingredientsMenu.classList.remove('active');
+  ingredientsHide.classList.add('active');
 })
 
 
 ingredientsHide.onclick = () => {
   ingredients.classList.remove('active');
-  ingredientsMenu.style.display = 'block';
-  ingredientsHide.style.display = 'none';
+  ingredientsMenu.classList.add('active');
+  ingredientsHide.classList.remove('active');
 }

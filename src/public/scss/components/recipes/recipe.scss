@@ -36,9 +36,16 @@
 
 
         
+            #ingredients {
+
                 #hide-menu {
                     display: none;
                 }
+
+                #hide-menu.active {
+                    display: block;
+                }
+            }
             
             #ingredients.fixed {
                 position: fixed;
@@ -46,8 +53,7 @@
                 top: 0;
                 height: 100vh;
                 width: 400px;
-                background-color: white;
-                padding: 3rem;
+                background: hsla(360, 0%, 70%, .3);
                 transition: all .4s ease-in-out;
                 border-radius: 20px;
             }
@@ -68,13 +74,15 @@
             #ingredients-menu.active {
                display: block;
                position: fixed;
-               top: 30px;
+               top: 10px;
                left: 0;
             }
 
             #steps {
+                margin-top: 10rem;
+                padding: 2rem;
                 .step {
-                    background-color: hsla(360, 0%, 27%, 0.85);
+                    background-color: hsla(360, 0%, 27%, 0.5);
                     padding: 1rem;
                     border-radius: 20px;
                     color: white;

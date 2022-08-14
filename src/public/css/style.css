@@ -572,16 +572,17 @@ hr {
       margin: 0 auto; }
     .recipe-wrapper #recipe-container .recipe-description input[type="checkbox"]:checked + label {
       text-decoration: line-through; }
-    .recipe-wrapper #recipe-container .recipe-description #hide-menu {
+    .recipe-wrapper #recipe-container .recipe-description #ingredients #hide-menu {
       display: none; }
+    .recipe-wrapper #recipe-container .recipe-description #ingredients #hide-menu.active {
+      display: block; }
     .recipe-wrapper #recipe-container .recipe-description #ingredients.fixed {
       position: fixed;
       left: -150%;
       top: 0;
       height: 100vh;
       width: 400px;
-      background-color: white;
-      padding: 3rem;
+      background: rgba(179, 179, 179, 0.3);
       transition: all .4s ease-in-out;
       border-radius: 20px; }
     .recipe-wrapper #recipe-container .recipe-description #ingredients.active {
@@ -595,16 +596,19 @@ hr {
     .recipe-wrapper #recipe-container .recipe-description #ingredients-menu.active {
       display: block;
       position: fixed;
-      top: 30px;
+      top: 10px;
       left: 0; }
-    .recipe-wrapper #recipe-container .recipe-description #steps .step {
-      background-color: rgba(69, 69, 69, 0.85);
-      padding: 1rem;
-      border-radius: 20px;
-      color: white; }
-      .recipe-wrapper #recipe-container .recipe-description #steps .step .step-index {
-        font-size: 1.2rem;
-        font-weight: bolder; }
+    .recipe-wrapper #recipe-container .recipe-description #steps {
+      margin-top: 10rem;
+      padding: 2rem; }
+      .recipe-wrapper #recipe-container .recipe-description #steps .step {
+        background-color: rgba(69, 69, 69, 0.5);
+        padding: 1rem;
+        border-radius: 20px;
+        color: white; }
+        .recipe-wrapper #recipe-container .recipe-description #steps .step .step-index {
+          font-size: 1.2rem;
+          font-weight: bolder; }
 
 #editRecipe {
   width: 100%;
