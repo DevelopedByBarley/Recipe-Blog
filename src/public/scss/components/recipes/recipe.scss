@@ -34,6 +34,44 @@
                 text-decoration: line-through;
             }
 
+
+        
+                #hide-menu {
+                    display: none;
+                }
+            
+            #ingredients.fixed {
+                position: fixed;
+                left: -150%;
+                top: 0;
+                height: 100vh;
+                width: 400px;
+                background-color: white;
+                padding: 3rem;
+                transition: all .4s ease-in-out;
+                border-radius: 20px;
+            }
+
+
+            #ingredients.active {
+                left: 0
+            }
+
+            #ingredients-menu {
+               display: none;
+               padding: 1rem;
+               background-color: #be2a77;
+               color: white;
+               border: 0;
+            }
+
+            #ingredients-menu.active {
+               display: block;
+               position: fixed;
+               top: 30px;
+               left: 0;
+            }
+
             #steps {
                 .step {
                     background-color: hsla(360, 0%, 27%, 0.85);
@@ -46,6 +84,7 @@
                     }
                 }
             }
+
         }
     }
 }
